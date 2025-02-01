@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistiema CTI</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="img/cti-logo.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="img/CTI-LOGO.ico" alt="Logo Coordinación TI" class="logo">
+            <h1>Coordinación de Tecnología de la Información</h1>
+            <nav>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#nosotros">Nosotros</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+            <button id="theme-toggle"><i class="fas fa-moon"></i></button>
+        </div>
+    </header>
+
+    <section id="inicio" class="hero">
+        <div class="container">
+            <h2>Bienvenidos a la Coordinación de TI</h2>
+            <p>Innovación y tecnología al servicio de la comunidad.</p>
+            <a href="#servicios" class="btn">Conoce más</a>
+        </div>
+    </section>
+
+    <section id="servicios" class="services">
+        <div class="container">
+            <h2>Nuestros Servicios</h2>
+            <div class="service-grid">
+                <div class="service-item">
+                    <h3>Soporte Técnico</h3>
+                    <p>Asistencia especializada en hardware y software.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Desarrollo de Software</h3>
+                    <p>Soluciones a medida para tu organización.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Infraestructura</h3>
+                    <p>Gestión y mantenimiento de redes y servidores.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="nosotros" class="about">
+        <div class="container">
+            <h2>Sobre Nosotros</h2>
+            <p>
+                Somos un equipo dedicado a la innovación tecnológica, comprometido con brindar soluciones
+                eficientes y de calidad para el desarrollo de nuestra institución.
+            </p>
+        </div>
+    </section>
+
+    <section id="contacto" class="contact">
+        <div class="container">
+            <h2>Contacto</h2>
+            <p>¿Tienes alguna pregunta? ¡No dudes en contactarnos!</p>
+            <form action="#" method="post">
+                <input type="text" name="nombre" placeholder="Nombre" required>
+                <input type="email" name="email" placeholder="Correo electrónico" required>
+                <textarea name="mensaje" placeholder="Mensaje" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Coordinación de Tecnología de la Información. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+const body = document.body;
+const icon = themeToggle.querySelector('i'); // Selecciona el ícono dentro del botón
+
+// Cargar tema guardado
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme) {
+    body.setAttribute('data-theme', savedTheme);
+    if (savedTheme === 'dark') {
+        icon.classList.replace('fa-moon', 'fa-sun'); // Cambia a ícono de sol
+        themeToggle.innerHTML = '<i class="fas fa-sun"></i> Dark';
+    } else {
+        icon.classList.replace('fa-sun', 'fa-moon'); // Cambia a ícono de luna
+        themeToggle.innerHTML = '<i class="fas fa-moon"></i> Light';
+    }
+}
+
+// Alternar entre temas
+themeToggle.addEventListener('click', () => {
+    if (body.getAttribute('data-theme') === 'dark') {
+        body.removeAttribute('data-theme');
+        localStorage.setItem('theme', 'light');
+        icon.classList.replace('fa-sun', 'fa-moon'); // Cambia a ícono de luna
+        themeToggle.innerHTML = '<i class="fas fa-moon"></i> Dark';
+    } else {
+        body.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+        icon.classList.replace('fa-moon', 'fa-sun'); // Cambia a ícono de sol
+        themeToggle.innerHTML = '<i class="fas fa-sun"></i> Light';
+    }
+});
+    </script>
+</body>
+</html>
