@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+    font-family: 'Nunito';
+    text-decoration: none;
+}
+/* Tema Claro por defecto */
+:root {
+    --bg-color: #ffffff;       /* Fondo blanco */
+    --text-color: #000000;     /* Texto negro */
+    --primary: #9d35f1;        /* Morado */
+    --secondary: #0000ff;      /* Azul */
+    --gray-1: #f0f0f0;         /* Gris claro */
+    --gray-2: #808080;         /* Gris medio */
+    --gray-3: #333333;         /* Gris oscuro */
+    --transition: all 0.3s ease;
+}
+
+/* Tema Oscuro */
+[data-theme="dark"] {
+    --bg-color: #000000;       /* Fondo negro */
+    --text-color: #ffffff;     /* Texto blanco */
+    --primary: #9b59b6;        /* Morado claro */
+    --secondary: #3498db;      /* Azul claro */
+    --gray-1: #1a1a1a;         /* Gris muy oscuro */
+    --gray-2: #4a4a4a;         /* Gris medio */
+    --gray-3: #b3b3b3;         /* Gris claro */
+}
+
+/* Estilos generales */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: Arial, sans-serif;
+    transition: var(--transition);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    text-align: center;
+}
+
+/* Header */
+header {
+    background-color: var(--gray-1);
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.logo {
+    height: 50px;
+    margin-bottom: 1rem;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 700;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--primary);
+}
+
+#theme-toggle {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    background-color: var(--gray-3);
+    color: var(--text-color);
+    padding: 0.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 1rem;
+    background-color: var(--primary);
+    color: var(--text-color);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Hero */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('img/hero-bg.jpg');
+    color: white;
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.hero h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: var(--primary);
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: var(--secondary);
+}
+
+/* Servicios */
+.services {
+    padding: 4rem 0;
+    background-color: var(--gray-1);
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.service-item {
+    background-color: var(--bg-color);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Sobre Nosotros */
+.about {
+    padding: 4rem 0;
+    text-align: center;
+}
+
+/* Contacto */
+.contact {
+    padding: 4rem 0;
+    background-color: var(--gray-1);
+}
+
+form {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid var(--gray-2);
+    border-radius: 4px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+button[type="submit"] {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary);
+    color: var(--text-color);
+    padding: 2rem 0;
+    text-align: center;
+}
+
+/* Media Queries para Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero h2 {
+        font-size: 1.5rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+}

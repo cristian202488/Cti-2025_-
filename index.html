@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistiema CTI</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" type="image/x-icon" href="img/cti-logo.ico">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="cti-logo.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
@@ -93,10 +93,10 @@ if (savedTheme) {
     body.setAttribute('data-theme', savedTheme);
     if (savedTheme === 'dark') {
         icon.classList.replace('fa-moon', 'fa-sun'); // Cambia a ícono de sol
-        themeToggle.innerHTML = '<i class="fas fa-sun"></i> Dark';
+        themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
     } else {
         icon.classList.replace('fa-sun', 'fa-moon'); // Cambia a ícono de luna
-        themeToggle.innerHTML = '<i class="fas fa-moon"></i> Light';
+        themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
     }
 }
 
@@ -106,12 +106,12 @@ themeToggle.addEventListener('click', () => {
         body.removeAttribute('data-theme');
         localStorage.setItem('theme', 'light');
         icon.classList.replace('fa-sun', 'fa-moon'); // Cambia a ícono de luna
-        themeToggle.innerHTML = '<i class="fas fa-moon"></i> Dark';
+        themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
     } else {
         body.setAttribute('data-theme', 'dark');
         localStorage.setItem('theme', 'dark');
         icon.classList.replace('fa-moon', 'fa-sun'); // Cambia a ícono de sol
-        themeToggle.innerHTML = '<i class="fas fa-sun"></i> Light';
+        themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
     }
 });
     </script>
